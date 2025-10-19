@@ -626,7 +626,7 @@ if apache_check == False:
 
 if attack_vector != "multiattack":
     if apache_check == False:
-        print(bcolors.BLUE + "[*] The Social-Engineer Toolkit Credential Harvester Attack\r\n[*] Credential Harvester is running on port " + web_port + "\r")
+        print(bcolors.BLUE + "[*] Ataque Recolector de Credenciales de ingenieriasocial\r\n[*] El Recolector de Credenciales está ejecutándose en el puerto " + web_port + "\r")
         print("[*] Information will be displayed to you as it arrives below:\r" + bcolors.ENDC)
     else:
         print(bcolors.BLUE + "[*] Apache is set to ON - everything will be placed in your web root directory of apache.")

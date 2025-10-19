@@ -26,8 +26,8 @@ if operating_system == "posix":
     #
 
     if os.geteuid() != 0:
-        print("\n The Social-Engineer Toolkit (SET) - by David Kennedy (ReL1K)")
-        print("\n Not running as root. \n\nExiting the Social-Engineer Toolkit (SET).\n")
+        print("\n ingenieriasocial - por MidasOrion")
+        print("\n No se está ejecutando como root. \n\nSaliendo de ingenieriasocial.\n")
         core.exit_set()
 
 # if we are running in the path no need to change
@@ -102,8 +102,8 @@ except ImportError:
     pass
 
 #
-# The Social-Engineer Toolkit (SET)     #
-# Written by: David Kennedy (ReL1K)     #
+# ingenieriasocial                      #
+# Creado por: MidasOrion                #
 #
 #
 # this is the main menu structure for SET
@@ -171,24 +171,24 @@ try:
             for line in fileopen:
                 print((line.rstrip()))
 
-        print("{0}The Social-Engineer Toolkit is designed purely"
-              " for good and not evil. If you are planning on "
-              "using this tool for malicious purposes that are "
-              "not authorized by the company you are performing "
-              "assessments for, you are violating the terms of "
-              "service and license of this toolset. By hitting "
-              "yes (only one time), you agree to the terms of "
-              "service and that you will only use this tool for "
-              "lawful purposes only.{1}".format(core.bcolors.RED, core.bcolors.ENDC))
+        print("{0}ingenieriasocial está diseñada puramente"
+              " para el bien y no para el mal. Si planeas "
+              "usar esta herramienta con propósitos maliciosos que no "
+              "estén autorizados por la compañía para la que realizas "
+              "evaluaciones, estás violando los términos de "
+              "servicio y licencia de esta herramienta. Al presionar "
+              "sí (solo una vez), aceptas los términos de "
+              "servicio y que solo usarás esta herramienta para "
+              "propósitos legales únicamente.{1}".format(core.bcolors.RED, core.bcolors.ENDC))
         print(core.bcolors.GREEN)
-        choice = input("\nDo you agree to the terms of service [y/n]: ")
+        choice = input("\n¿Aceptas los términos de servicio [y/n]: ")
         choice += " "  # b/c method below
         if choice[0].lower() == "y":
             with open("src/agreement4", "w") as filewrite:
                 filewrite.write("user accepted")
             print(core.bcolors.ENDC)
         else:
-            print(core.bcolors.ENDC + "[!] Exiting the Social-Engineer Toolkit, have a nice day." + core.bcolors.ENDC)
+            print(core.bcolors.ENDC + "[!] Saliendo de ingenieriasocial, que tengas un buen día." + core.bcolors.ENDC)
             sys.exit()
 
     while True:
@@ -196,7 +196,7 @@ try:
         show_main_menu = core.create_menu(text.main_text, text.main_menu)
 
         # special case of list item 99
-        print('\n  99) Exit the Social-Engineer Toolkit\n')
+        print('\n  99) Salir de ingenieriasocial\n')
 
         # main core menu
         main_menu_choice = (input(core.setprompt("0", "")))
@@ -273,14 +273,13 @@ try:
 
 # handle keyboard interrupts
 except KeyboardInterrupt:
-    print(("\n\nThank you for {0}shopping{1} with the Social-Engineer Toolkit."
-           "\n\nHack the Gibson...and remember...hugs are worth more "
-           "than handshakes.\n".format(core.bcolors.RED, core.bcolors.ENDC)))
+    print(("\n\nGracias por usar {0}ingenieriasocial{1} creado por MidasOrion."
+           "\n\nRecuerda usar esta herramienta de forma ética y responsable.\n".format(core.bcolors.RED, core.bcolors.ENDC)))
 
 # handle exceptions
 except Exception as error:
     core.log(error)
-    print("\n\n[!] Something went wrong, printing the error: " + str(error))
+    print("\n\n[!] Algo salió mal, imprimiendo el error: " + str(error))
 
 # cleanup routine
 core.cleanup_routine()

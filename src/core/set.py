@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
 #
-# The Social-Engineer Toolkit
-# Written by: David Kennedy (ReL1K)
+# ingenieriasocial
+# Creado por: MidasOrion
 #
 #
 import shutil
@@ -41,9 +41,9 @@ msf_path = meta_path()
 if operating_system == "posix":
     if os.geteuid() != 0:
         print(
-            "\n The Social-Engineer Toolkit (SET) - by David Kennedy (ReL1K)")
+            "\n ingenieriasocial - por MidasOrion")
         print(
-            "\n Not running as root. \n\nExiting the Social-Engineer Toolkit (SET).\n")
+            "\n No se está ejecutando como root. \n\nSaliendo de ingenieriasocial.\n")
         sys.exit(1)
 
 define_version = get_version()
@@ -57,7 +57,7 @@ try:
         debug_msg(me, "printing 'text.main'", 5)
         show_main_menu = create_menu(text.main_text, text.main)
         # special case of list item 99
-        print('\n  99) Return back to the main menu.\n')
+        print('\n  99) Volver al menú principal.\n')
         main_menu_choice = (raw_input(setprompt("0", "")))
 
         if main_menu_choice == 'exit':
@@ -66,7 +66,7 @@ try:
         if operating_system == "windows" or msf_path == False:
             if main_menu_choice == "1" or main_menu_choice == "4" or main_menu_choice == "8" or main_menu_choice == "3":
                 print_warning(
-                    "Sorry. This feature is not yet supported in Windows or Metasploit was not found.")
+                    "Lo siento. Esta característica aún no está soportada en Windows o Metasploit no fue encontrado.")
                 return_continue()
                 break
 
@@ -157,10 +157,10 @@ try:
                 try:
                     attack_check = int(attack_vector)
                 except:
-                    print_error("ERROR:Invalid selection, going back to menu.")
+                    print_error("ERROR: Selección inválida, volviendo al menú.")
                     break
                 if attack_check > 9:
-                    print_warning("Invalid option")
+                    print_warning("¡Opción inválida!")
                     return_continue()
                     break
 
@@ -181,7 +181,7 @@ try:
                 #if attack_vector != "7":
                 debug_msg(me, "printing 'text.webattack_vectors_menu'", 5)
                 show_webvectors_menu = create_menu(text.webattack_vectors_text, text.webattack_vectors_menu)
-                print('  99) Return to Webattack Menu\n')
+                print('  99) Volver al Menú de Ataque Web\n')
                 choice3 = raw_input(setprompt(["2"], ""))
 
                 if choice3 == 'exit':
@@ -668,14 +668,14 @@ this is how networking works.
                                     print_error(
                                         "ERROR:Did you just put the path in, not file?")
                                     print_error(
-                                        "Exiting the Social-Engineer Toolkit...Hack the Gibson.\n")
+                                        "Saliendo de ingenieriasocial...\n")
                                     exit_set()
 
                         if os.path.isfile(URL + "index.html"):
                             print_status(
-                                "Index.html found. Do you want to copy the entire folder or just index.html?")
+                                "Index.html encontrado. ¿Desea copiar toda la carpeta o solo el index.html?")
                             choice = raw_input(
-                                "\n1. Copy just the index.html\n2. Copy the entire folder\n\nEnter choice [1/2]: ")
+                                "\n1. Copiar solo el index.html\n2. Copiar toda la carpeta\n\nIngrese su elección [1/2]: ")
                             if choice == "1" or choice == "":
                                 if os.path.isfile("%s/web_clone/index.html" % (userconfigpath)):
                                     os.remove("%s/web_clone/index.html" % (userconfigpath))
@@ -827,7 +827,7 @@ this is how networking works.
 
                     # Return to main menu
                     if choice3 == '4':
-                        print (" Returning to main menu.\n")
+                        print (" Volviendo al menú principal.\n")
                         break
                 except KeyboardInterrupt:
                     print(
@@ -939,7 +939,7 @@ this is how networking works.
                 filewrite.write(teensy_menu_choice + "\n")
                 if teensy_menu_choice != "3" and teensy_menu_choice != "7" and teensy_menu_choice != "8" and teensy_menu_choice != "9" and teensy_menu_choice != "10" and teensy_menu_choice != "11" and teensy_menu_choice != "12" and teensy_menu_choice != "13" and teensy_menu_choice != "14":
                     yes_or_no = yesno_prompt(
-                        "0", "Do you want to create a payload and listener [yes|no]: ")
+                        "0", "¿Desea crear un payload y listener [yes|no]: ")
                     if yes_or_no == "YES":
                         filewrite.write("payload")
                         filewrite.close()
@@ -1117,7 +1117,7 @@ this is how networking works.
 
                             # if we want to return to the main menu
                             if wireless_menu_choice == "99":
-                                print (" [*] Returning to the main menu ...")
+                                print (" [*] Volviendo al menú principal ...")
                                 break
 
                 if not os.path.isfile(dnsspoof_path):
@@ -1176,12 +1176,12 @@ and send the QRCode via a mailer.
             except:
                 import module_handler
 
-        # Main Menu choice 99: Exit the Social-Engineer Toolkit
+        # Main Menu choice 99: Exit ingenieriasocial
         if main_menu_choice == '99':
             break
 
 # handle keyboard interrupts
 except KeyboardInterrupt:
-    print("\n\n Thank you for " + bcolors.RED + "shopping" + bcolors.ENDC +
-          " with the Social-Engineer Toolkit.\n\n Hack the Gibson...and remember...hugs are worth more than handshakes.\n")
+    print("\n\n Gracias por usar " + bcolors.RED + "ingenieriasocial" + bcolors.ENDC +
+          " creado por MidasOrion.\n\n Recuerda usar esta herramienta de forma ética y responsable.\n")
 

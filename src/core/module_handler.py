@@ -15,7 +15,7 @@ counter = 0
 
 # get the menu going
 print("\n")
-print_info_spaces("Social-Engineer Toolkit Third Party Modules menu.")
+print_info_spaces("Menú de Módulos de Terceros de ingenieriasocial.")
 print_info_spaces(
     "Please read the readme/modules.txt for information on how to create your own modules.\n")
 

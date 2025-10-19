@@ -44,9 +44,9 @@ payload_generate(payload, lhost, port)
 if check_options("INFECTION_MEDIA=") != "ON":
     # start the payload for the user
     payload_query = raw_input(setprompt(
-        ["4"], "Do you want to start the payload and listener now? (yes/no)"))
+        ["4"], "¿Desea iniciar el payload y listener ahora? (yes/no)"))
     if payload_query.lower() == "y" or payload_query.lower() == "yes":
         print_status(
-            "Launching msfconsole, this could take a few to load. Be patient...")
+            "Lanzando msfconsole, esto podría tardar un poco en cargar. Sea paciente...")
         subprocess.Popen(meta_path + "msfconsole -r " +
                          userconfigpath + "meta_config", shell=True).wait()

@@ -15,247 +15,245 @@ operating_system = check_os()
 # grab metasploit path
 msf_path = meta_path()
 
-PORT_NOT_ZERO = "Port cannot be zero!"
-PORT_TOO_HIGH = "Let's stick with the LOWER 65,535 ports..."
+PORT_NOT_ZERO = "¡El puerto no puede ser cero!"
+PORT_TOO_HIGH = "Mantengámonos con los puertos INFERIORES a 65,535..."
 
-main_text = " Select from the menu:\n"
+main_text = " Seleccione del menú:\n"
 
-main_menu = ['Social-Engineering Attacks',
-             'Penetration Testing (Fast-Track)',
-             'Third Party Modules',
-             'Update the Social-Engineer Toolkit',
-             'Update SET configuration',
-             'Help, Credits, and About']
+main_menu = ['Ataques de Ingeniería Social',
+             'Pruebas de Penetración (Fast-Track)',
+             'Módulos de Terceros',
+             'Actualizar ingenieriasocial',
+             'Actualizar configuración de ingenieriasocial',
+             'Ayuda, Créditos y Acerca de']
 
-main = ['Spear-Phishing Attack Vectors',
-        'Website Attack Vectors',
-        'Infectious Media Generator',
-        'Create a Payload and Listener',
-        'Mass Mailer Attack',
-        'Arduino-Based Attack Vector',
-        'Wireless Access Point Attack Vector',
-        'QRCode Generator Attack Vector',
-        'Powershell Attack Vectors',
-        'Third Party Modules']
+main = ['Vectores de Ataque Spear-Phishing',
+        'Vectores de Ataque Web',
+        'Generador de Medios Infecciosos',
+        'Crear un Payload y Listener',
+        'Ataque de Correo Masivo',
+        'Vector de Ataque Basado en Arduino',
+        'Vector de Ataque de Punto de Acceso Inalámbrico',
+        'Vector de Ataque Generador de Código QR',
+        'Vectores de Ataque Powershell',
+        'Módulos de Terceros']
 
-spearphish_menu = ['Perform a Mass Email Attack',
-                   'Create a FileFormat Payload',
-                   'Create a Social-Engineering Template',
+spearphish_menu = ['Realizar un Ataque de Correo Masivo',
+                   'Crear un Payload de Formato de Archivo',
+                   'Crear una Plantilla de Ingeniería Social',
                    '0D']
 
 spearphish_text = ("""
- The """ + bcolors.BOLD + """Spearphishing""" + bcolors.ENDC + """ module allows you to specially craft email messages and send
- them to a large (or small) number of people with attached fileformat malicious
- payloads. If you want to spoof your email address, be sure "Sendmail" is in-
- stalled (apt-get install sendmail) and change the config/set_config SENDMAIL=OFF
- flag to SENDMAIL=ON.
+ El módulo de """ + bcolors.BOLD + """Spearphishing""" + bcolors.ENDC + """ le permite crear mensajes de correo especialmente diseñados y enviarlos
+ a un gran (o pequeño) número de personas con payloads maliciosos adjuntos en formato de archivo.
+ Si desea falsificar su dirección de correo, asegúrese de que "Sendmail" esté instalado
+ (apt-get install sendmail) y cambie la bandera config/set_config SENDMAIL=OFF a SENDMAIL=ON.
 
- There are two options, one is getting your feet wet and letting SET do
- everything for you (option 1), the second is to create your own FileFormat
- payload and use it in your own attack. Either way, good luck and enjoy!
+ Hay dos opciones, una es empezar y dejar que SET haga todo por usted (opción 1),
+ la segunda es crear su propio payload de formato de archivo y usarlo en su propio ataque.
+ ¡De cualquier manera, buena suerte y disfrute!
 """)
 
-webattack_menu = ['Java Applet Attack Method',
-                  'Metasploit Browser Exploit Method',
-                  'Credential Harvester Attack Method',
-                  'Tabnabbing Attack Method',
-                  'Web Jacking Attack Method',
-                  'Multi-Attack Web Method',
-                  'HTA Attack Method',
+webattack_menu = ['Método de Ataque Java Applet',
+                  'Método de Exploit de Navegador Metasploit',
+                  'Método de Ataque Recolector de Credenciales',
+                  'Método de Ataque Tabnabbing',
+                  'Método de Ataque Web Jacking',
+                  'Método de Multi-Ataque Web',
+                  'Método de Ataque HTA',
                   '0D']
 
-fasttrack_menu = ['Microsoft SQL Bruter',
-                  'Custom Exploits',
-                  'SCCM Attack Vector',
-                  'Dell DRAC/Chassis Default Checker',
-                  'RID_ENUM - User Enumeration Attack',
-                  'PSEXEC Powershell Injection',
+fasttrack_menu = ['Fuerza Bruta Microsoft SQL',
+                  'Exploits Personalizados',
+                  'Vector de Ataque SCCM',
+                  'Verificador Predeterminado Dell DRAC/Chassis',
+                  'RID_ENUM - Ataque de Enumeración de Usuarios',
+                  'Inyección PSEXEC Powershell',
                   '0D']
 
 fasttrack_text = ("""
-Welcome to the Social-Engineer Toolkit - """ + bcolors.BOLD + """Fast-Track Penetration Testing platform""" + bcolors.ENDC + """. These attack vectors
-have a series of exploits and automation aspects to assist in the art of penetration testing. SET
-now incorporates the attack vectors leveraged in Fast-Track. All of these attack vectors have been
-completely rewritten and customized from scratch as to improve functionality and capabilities.
+Bienvenido a ingenieriasocial - """ + bcolors.BOLD + """Plataforma de Pruebas de Penetración Fast-Track""" + bcolors.ENDC + """. Estos vectores de ataque
+tienen una serie de exploits y aspectos de automatización para asistir en el arte de las pruebas de penetración. SET
+ahora incorpora los vectores de ataque aprovechados en Fast-Track. Todos estos vectores de ataque han sido
+completamente reescritos y personalizados desde cero para mejorar la funcionalidad y capacidades.
 """)
 
 fasttrack_exploits_menu1 = ['MS08-067 (Win2000, Win2k3, WinXP)',
-                            'Mozilla Firefox 3.6.16 mChannel Object Use After Free Exploit (Win7)',
-                            'Solarwinds Storage Manager 5.1.0 Remote SYSTEM SQL Injection Exploit',
-                            'RDP | Use after Free - Denial of Service',
-                            'MySQL Authentication Bypass Exploit',
-                            'F5 Root Authentication Bypass Exploit',
+                            'Mozilla Firefox 3.6.16 Exploit Use After Free del Objeto mChannel (Win7)',
+                            'Solarwinds Storage Manager 5.1.0 Exploit de Inyección SQL SYSTEM Remoto',
+                            'RDP | Use after Free - Denegación de Servicio',
+                            'Exploit de Bypass de Autenticación MySQL',
+                            'Exploit de Bypass de Autenticación Root F5',
                             '0D']
 
 fasttrack_exploits_text1 = ("""
-Welcome to the Social-Engineer Toolkit - Fast-Track Penetration Testing """ + bcolors.BOLD + """Exploits Section""" + bcolors.ENDC + """. This
-menu has obscure exploits and ones that are primarily python driven. This will continue to grow over time.
+Bienvenido a ingenieriasocial - Pruebas de Penetración Fast-Track """ + bcolors.BOLD + """Sección de Exploits""" + bcolors.ENDC + """. Este
+menú tiene exploits oscuros y aquellos que son principalmente impulsados por python. Esto continuará creciendo con el tiempo.
 """)
 
-fasttrack_mssql_menu1 = ['Scan and Attack MSSQL',
-                         'Connect directly to MSSQL',
+fasttrack_mssql_menu1 = ['Escanear y Atacar MSSQL',
+                         'Conectar directamente a MSSQL',
                          '0D']
 
 fasttrack_mssql_text1 = ("""
-Welcome to the Social-Engineer Toolkit - Fast-Track Penetration Testing """ + bcolors.BOLD + """Microsoft SQL Brute Forcer""" + bcolors.ENDC + """. This
-attack vector will attempt to identify live MSSQL servers and brute force the weak account passwords that
-may be found. If that occurs, SET will then compromise the affected system by deploying a binary to
-hexadecimal attack vector which will take a raw binary, convert it to hexadecimal and use a staged approach
-in deploying the hexadecimal form of the binary onto the underlying system. At this point, a trigger will occur
-to convert the payload back to a binary for us.
+Bienvenido a ingenieriasocial - Pruebas de Penetración Fast-Track """ + bcolors.BOLD + """Fuerza Bruta Microsoft SQL""" + bcolors.ENDC + """. Este
+vector de ataque intentará identificar servidores MSSQL activos y forzar por fuerza bruta las contraseñas débiles de cuentas que
+puedan encontrarse. Si eso ocurre, SET comprometerá el sistema afectado desplegando un vector de ataque binario a
+hexadecimal que tomará un binario crudo, lo convertirá a hexadecimal y usará un enfoque por etapas
+en el despliegue de la forma hexadecimal del binario en el sistema subyacente. En este punto, ocurrirá un disparador
+para convertir el payload de vuelta a un binario para nosotros.
 """)
 
 webattack_text = ("""
-The Web Attack module is a unique way of utilizing multiple web-based attacks in order to compromise the intended victim.
+El módulo de Ataque Web es una forma única de utilizar múltiples ataques basados en web para comprometer a la víctima objetivo.
 
-The """ + bcolors.BOLD + """Java Applet Attack""" + bcolors.ENDC + """ method will spoof a Java Certificate and deliver a Metasploit-based payload. Uses a customized java applet created by Thomas Werth to deliver the payload.
+El método de """ + bcolors.BOLD + """Ataque Java Applet""" + bcolors.ENDC + """ falsificará un Certificado Java y entregará un payload basado en Metasploit. Usa un applet java personalizado creado por Thomas Werth para entregar el payload.
 
-The """ + bcolors.BOLD + """Metasploit Browser Exploit""" + bcolors.ENDC + """ method will utilize select Metasploit browser exploits through an iframe and deliver a Metasploit payload.
+El método de """ + bcolors.BOLD + """Exploit de Navegador Metasploit""" + bcolors.ENDC + """ utilizará exploits selectos de navegador Metasploit a través de un iframe y entregará un payload Metasploit.
 
-The """ + bcolors.BOLD + """Credential Harvester""" + bcolors.ENDC + """ method will utilize web cloning of a web- site that has a username and password field and harvest all the information posted to the website.
+El método de """ + bcolors.BOLD + """Recolector de Credenciales""" + bcolors.ENDC + """ utilizará clonación web de un sitio web que tenga un campo de nombre de usuario y contraseña y recolectará toda la información publicada en el sitio web.
 
-The """ + bcolors.BOLD + """TabNabbing""" + bcolors.ENDC + """ method will wait for a user to move to a different tab, then refresh the page to something different.
+El método de """ + bcolors.BOLD + """TabNabbing""" + bcolors.ENDC + """ esperará a que un usuario se mueva a una pestaña diferente, luego actualizará la página a algo diferente.
 
-The """ + bcolors.BOLD + """Web-Jacking Attack""" + bcolors.ENDC + """ method was introduced by white_sheep, emgent. This method utilizes iframe replacements to make the highlighted URL link to appear legitimate however when clicked a window pops up then is replaced with the malicious link. You can edit the link replacement settings in the set_config if it's too slow/fast.
+El método de """ + bcolors.BOLD + """Ataque Web-Jacking""" + bcolors.ENDC + """ fue introducido por white_sheep, emgent. Este método utiliza reemplazos de iframe para hacer que el enlace URL resaltado parezca legítimo, sin embargo, cuando se hace clic, aparece una ventana que luego es reemplazada con el enlace malicioso. Puede editar la configuración de reemplazo de enlaces en set_config si es demasiado lento/rápido.
 
-The """ + bcolors.BOLD + """Multi-Attack""" + bcolors.ENDC + """ method will add a combination of attacks through the web attack menu. For example, you can utilize the Java Applet, Metasploit Browser, Credential Harvester/Tabnabbing all at once to see which is successful.
+El método de """ + bcolors.BOLD + """Multi-Ataque""" + bcolors.ENDC + """ agregará una combinación de ataques a través del menú de ataque web. Por ejemplo, puede utilizar el Java Applet, Navegador Metasploit, Recolector de Credenciales/Tabnabbing todo a la vez para ver cuál tiene éxito.
 
-The """ + bcolors.BOLD + """HTA Attack""" + bcolors.ENDC + """ method will allow you to clone a site and perform PowerShell injection through HTA files which can be used for Windows-based PowerShell exploitation through the browser.
+El método de """ + bcolors.BOLD + """Ataque HTA""" + bcolors.ENDC + """ le permitirá clonar un sitio y realizar inyección PowerShell a través de archivos HTA que pueden usarse para explotación PowerShell basada en Windows a través del navegador.
 """)
 
-webattack_vectors_menu = ['Web Templates',
-                          'Site Cloner',
-                          'Custom Import\n',
+webattack_vectors_menu = ['Plantillas Web',
+                          'Clonador de Sitios',
+                          'Importación Personalizada\n',
                           ]
 
 webattack_vectors_text = ("""
- The first method will allow SET to import a list of pre-defined web
- applications that it can utilize within the attack.
+ El primer método permitirá a SET importar una lista de aplicaciones web
+ predefinidas que puede utilizar dentro del ataque.
 
- The second method will completely clone a website of your choosing
- and allow you to utilize the attack vectors within the completely
- same web application you were attempting to clone.
+ El segundo método clonará completamente un sitio web de su elección
+ y le permitirá utilizar los vectores de ataque dentro de la misma
+ aplicación web que estaba intentando clonar.
 
- The third method allows you to import your own website, note that you
- should only have an index.html when using the import website
- functionality.
+ El tercer método le permite importar su propio sitio web, tenga en cuenta que
+ solo debe tener un index.html al usar la funcionalidad de importar sitio web.
    """)
 
-teensy_menu = ['PowerShell HTTP GET MSF Payload',
-               'WSCRIPT HTTP GET MSF Payload',
-               'PowerShell based Reverse Shell Payload',
-               'Internet Explorer/FireFox Beef Jack Payload',
-               'Go to malicious java site and accept applet Payload',
-               'Gnome wget Download Payload',
-               'Binary 2 Teensy Attack (Deploy MSF payloads)',
-               'SDCard 2 Teensy Attack (Deploy Any EXE)',
-               'SDCard 2 Teensy Attack (Deploy on OSX)',
-               'X10 Arduino Sniffer PDE and Libraries',
-               'X10 Arduino Jammer PDE and Libraries',
-               'PowerShell Direct ShellCode Teensy Attack',
-               'Peensy Multi Attack Dip Switch + SDCard Attack',
-	       'HID Msbuild compile to memory Shellcode Attack',
+teensy_menu = ['Payload PowerShell HTTP GET MSF',
+               'Payload WSCRIPT HTTP GET MSF',
+               'Payload Reverse Shell basado en PowerShell',
+               'Payload Internet Explorer/FireFox Beef Jack',
+               'Ir a sitio java malicioso y aceptar payload applet',
+               'Payload Descarga Gnome wget',
+               'Ataque Binary 2 Teensy (Desplegar payloads MSF)',
+               'Ataque SDCard 2 Teensy (Desplegar Cualquier EXE)',
+               'Ataque SDCard 2 Teensy (Desplegar en OSX)',
+               'X10 Arduino Sniffer PDE y Bibliotecas',
+               'X10 Arduino Jammer PDE y Bibliotecas',
+               'Ataque Teensy ShellCode Directo PowerShell',
+               'Ataque Multi Peensy Dip Switch + Ataque SDCard',
+	       'Ataque Shellcode HID Msbuild compilar en memoria',
                '0D']
 
 teensy_text = ("""
- The """ + bcolors.BOLD + """Arduino-Based Attack""" + bcolors.ENDC + """ Vector utilizes the Arduin-based device to
- program the device. You can leverage the Teensy's, which have onboard
- storage and can allow for remote code execution on the physical
- system. Since the devices are registered as USB Keyboard's it
- will bypass any autorun disabled or endpoint protection on the
- system.
+ El Vector de """ + bcolors.BOLD + """Ataque Basado en Arduino""" + bcolors.ENDC + """ utiliza el dispositivo basado en Arduino para
+ programar el dispositivo. Puede aprovechar los Teensy, que tienen almacenamiento
+ integrado y pueden permitir la ejecución remota de código en el sistema
+ físico. Dado que los dispositivos están registrados como Teclados USB,
+ evitarán cualquier autorun deshabilitado o protección de endpoint en el
+ sistema.
 
- You will need to purchase the Teensy USB device, it's roughly
- $22 dollars. This attack vector will auto generate the code
- needed in order to deploy the payload on the system for you.
+ Necesitará comprar el dispositivo USB Teensy, cuesta aproximadamente
+ $22 dólares. Este vector de ataque generará automáticamente el código
+ necesario para desplegar el payload en el sistema por usted.
 
- This attack vector will create the .pde files necessary to import
- into Arduino (the IDE used for programming the Teensy). The attack
- vectors range from PowerShell based downloaders, wscript attacks,
- and other methods.
+ Este vector de ataque creará los archivos .pde necesarios para importar
+ en Arduino (el IDE usado para programar el Teensy). Los vectores de ataque
+ van desde descargadores basados en PowerShell, ataques wscript,
+ y otros métodos.
 
- For more information on specifications and good tutorials visit:
+ Para más información sobre especificaciones y buenos tutoriales visite:
 
  http://www.irongeek.com/i.php?page=security/programmable-hid-usb-keystroke-dongle
 
- To purchase a Teensy, visit: http://www.pjrc.com/store/teensy.html
- Special thanks to: IronGeek, WinFang, and Garland
+ Para comprar un Teensy, visite: http://www.pjrc.com/store/teensy.html
+ Agradecimientos especiales a: IronGeek, WinFang, y Garland
 
- This attack vector also attacks X10 based controllers, be sure to be leveraging
- X10 based communication devices in order for this to work.
+ Este vector de ataque también ataca controladores basados en X10, asegúrese de estar aprovechando
+ dispositivos de comunicación basados en X10 para que esto funcione.
 
- Select a payload to create the pde file to import into Arduino:
+ Seleccione un payload para crear el archivo pde para importar en Arduino:
 """)
 
-wireless_attack_menu = ['Start the SET Wireless Attack Vector Access Point',
-                        'Stop the SET Wireless Attack Vector Access Point',
+wireless_attack_menu = ['Iniciar el Punto de Acceso del Vector de Ataque Inalámbrico SET',
+                        'Detener el Punto de Acceso del Vector de Ataque Inalámbrico SET',
                         '0D']
 
 
 wireless_attack_text = """
- The """ + bcolors.BOLD + """Wireless Attack""" + bcolors.ENDC + """ module will create an access point leveraging your
- wireless card and redirect all DNS queries to you. The concept is fairly
- simple, SET will create a wireless access point, DHCP server, and spoof
- DNS to redirect traffic to the attacker machine. It will then exit out
- of that menu with everything running as a child process.
+ El módulo de """ + bcolors.BOLD + """Ataque Inalámbrico""" + bcolors.ENDC + """ creará un punto de acceso aprovechando su
+ tarjeta inalámbrica y redirigirá todas las consultas DNS hacia usted. El concepto es bastante
+ simple, SET creará un punto de acceso inalámbrico, servidor DHCP, y falsificará
+ DNS para redirigir el tráfico a la máquina del atacante. Luego saldrá
+ de ese menú con todo ejecutándose como un proceso hijo.
 
- You can then launch any SET attack vector you want, for example the Java
- Applet attack and when a victim joins your access point and tries going to
- a website, will be redirected to your attacker machine.
+ Luego puede lanzar cualquier vector de ataque SET que desee, por ejemplo el ataque
+ Java Applet y cuando una víctima se una a su punto de acceso e intente ir a
+ un sitio web, será redirigida a su máquina atacante.
 
- This attack vector requires AirBase-NG, AirMon-NG, DNSSpoof, and dhcpd3.
+ Este vector de ataque requiere AirBase-NG, AirMon-NG, DNSSpoof, y dhcpd3.
 
 """
 
-infectious_menu = ['File-Format Exploits',
-                   'Standard Metasploit Executable',
+infectious_menu = ['Exploits de Formato de Archivo',
+                   'Ejecutable Estándar Metasploit',
                    '0D']
 
 
 infectious_text = """
- The """ + bcolors.BOLD + bcolors.GREEN + """Infectious """ + bcolors.ENDC + """USB/CD/DVD module will create an autorun.inf file and a
- Metasploit payload. When the DVD/USB/CD is inserted, it will automatically
- run if autorun is enabled.""" + bcolors.ENDC + """
+ El módulo """ + bcolors.BOLD + bcolors.GREEN + """Infeccioso """ + bcolors.ENDC + """USB/CD/DVD creará un archivo autorun.inf y un
+ payload Metasploit. Cuando se inserte el DVD/USB/CD, se ejecutará automáticamente
+ si autorun está habilitado.""" + bcolors.ENDC + """
 
- Pick the attack vector you wish to use: fileformat bugs or a straight executable.
+ Elija el vector de ataque que desea usar: bugs de formato de archivo o un ejecutable directo.
 """
 
 # used in create_payloads.py
 if operating_system != "windows":
     if msf_path != False:
         payload_menu_1 = [
-            'Meterpreter Memory Injection (DEFAULT)  This will drop a Meterpreter payload through powershell injection',
-            'Meterpreter Multi-Memory Injection      This will drop multiple Metasploit payloads via powershell injection',
-            'SE Toolkit Interactive Shell            Custom interactive reverse toolkit designed for SET',
-            'SE Toolkit HTTP Reverse Shell           Purely native HTTP shell with AES encryption support',
-            'RATTE HTTP Tunneling Payload            Security bypass payload that will tunnel all comms over HTTP',
-            'ShellCodeExec Alphanum Shellcode        This will drop a meterpreter payload through shellcodeexec',
-            'Import your own executable              Specify a path for your own executable',
-            'Import your own commands.txt            Specify payloads to be sent via command line\n']
+            'Inyección de Memoria Meterpreter (PREDETERMINADO)  Esto soltará un payload Meterpreter a través de inyección powershell',
+            'Inyección Multi-Memoria Meterpreter      Esto soltará múltiples payloads Metasploit vía inyección powershell',
+            'Shell Interactivo SE Toolkit            Shell inverso interactivo personalizado diseñado para SET',
+            'Shell Inverso HTTP SE Toolkit           Shell HTTP puramente nativo con soporte de cifrado AES',
+            'Payload Túnel HTTP RATTE                Payload de bypass de seguridad que tunelizará todas las comunicaciones sobre HTTP',
+            'ShellCode Alfanumérico ShellCodeExec    Esto soltará un payload meterpreter a través de shellcodeexec',
+            'Importar su propio ejecutable           Especifique una ruta para su propio ejecutable',
+            'Importar su propio commands.txt         Especifique payloads a enviar vía línea de comandos\n']
 
 if operating_system == "windows" or msf_path == False:
     payload_menu_1 = [
-        'SE Toolkit Interactive Shell    Custom interactive reverse toolkit designed for SET',
-        'SE Toolkit HTTP Reverse Shell   Purely native HTTP shell with AES encryption support',
-        'RATTE HTTP Tunneling Payload    Security bypass payload that will tunnel all comms over HTTP\n']
+        'Shell Interactivo SE Toolkit    Shell inverso interactivo personalizado diseñado para SET',
+        'Shell Inverso HTTP SE Toolkit   Shell HTTP puramente nativo con soporte de cifrado AES',
+        'Payload Túnel HTTP RATTE        Payload de bypass de seguridad que tunelizará todas las comunicaciones sobre HTTP\n']
 
 payload_menu_1_text = """
-What payload would you like to generate:
+¿Qué payload le gustaría generar:
 
-  Name:                                       Description:
+  Nombre:                                     Descripción:
 """
 
 # used in gen_payload.py
 payload_menu_2 = [
-    'Windows Shell Reverse_TCP               Spawn a command shell on victim and send back to attacker',
-    'Windows Reverse_TCP Meterpreter         Spawn a meterpreter shell on victim and send back to attacker',
-    'Windows Reverse_TCP VNC DLL             Spawn a VNC server on victim and send back to attacker',
-    'Windows Shell Reverse_TCP X64           Windows X64 Command Shell, Reverse TCP Inline',
-    'Windows Meterpreter Reverse_TCP X64     Connect back to the attacker (Windows x64), Meterpreter',
-    'Windows Meterpreter Egress Buster       Spawn a Meterpreter shell and find a port home via multiple ports',
-    'Windows Meterpreter Reverse HTTPS       Tunnel communication over HTTP using SSL and use Meterpreter',
-    'Windows Meterpreter Reverse DNS         Use a hostname instead of an IP address and use Reverse Meterpreter',
-    'Download/Run your Own Executable        Downloads an executable and runs it\n'
+    'Windows Shell Reverse_TCP               Generar un shell de comandos en la víctima y enviar de vuelta al atacante',
+    'Windows Reverse_TCP Meterpreter         Generar un shell meterpreter en la víctima y enviar de vuelta al atacante',
+    'Windows Reverse_TCP VNC DLL             Generar un servidor VNC en la víctima y enviar de vuelta al atacante',
+    'Windows Shell Reverse_TCP X64           Shell de Comandos Windows X64, Reverse TCP Inline',
+    'Windows Meterpreter Reverse_TCP X64     Conectar de vuelta al atacante (Windows x64), Meterpreter',
+    'Windows Meterpreter Egress Buster       Generar un shell Meterpreter y encontrar un puerto de salida vía múltiples puertos',
+    'Windows Meterpreter Reverse HTTPS       Tunelizar comunicación sobre HTTP usando SSL y usar Meterpreter',
+    'Windows Meterpreter Reverse DNS         Usar un nombre de host en lugar de una dirección IP y usar Reverse Meterpreter',
+    'Descargar/Ejecutar su Propio Ejecutable Descarga un ejecutable y lo ejecuta\n'
 ]
 
 
@@ -263,13 +261,13 @@ payload_menu_2_text = """\n"""
 
 payload_menu_3_text = ""
 payload_menu_3 = [
-    'Windows Reverse TCP Shell              Spawn a command shell on victim and send back to attacker',
-    'Windows Meterpreter Reverse_TCP        Spawn a Meterpreter shell on victim and send back to attacker',
-    'Windows Reverse VNC DLL                Spawn a VNC server on victim and send back to attacker',
-    'Windows Reverse TCP Shell (x64)        Windows X64 Command Shell, Reverse TCP Inline',
-    'Windows Meterpreter Reverse_TCP (X64)  Connects back to the attacker (Windows x64), Meterpreter',
-    'Windows Shell Bind_TCP (X64)           Execute payload and create an accepting port on remote system',
-    'Windows Meterpreter Reverse HTTPS      Tunnel communication over HTTP using SSL and use Meterpreter\n']
+    'Windows Reverse TCP Shell              Generar un shell de comandos en la víctima y enviar de vuelta al atacante',
+    'Windows Meterpreter Reverse_TCP        Generar un shell Meterpreter en la víctima y enviar de vuelta al atacante',
+    'Windows Reverse VNC DLL                Generar un servidor VNC en la víctima y enviar de vuelta al atacante',
+    'Windows Reverse TCP Shell (x64)        Shell de Comandos Windows X64, Reverse TCP Inline',
+    'Windows Meterpreter Reverse_TCP (X64)  Conecta de vuelta al atacante (Windows x64), Meterpreter',
+    'Windows Shell Bind_TCP (X64)           Ejecutar payload y crear un puerto de aceptación en el sistema remoto',
+    'Windows Meterpreter Reverse HTTPS      Tunelizar comunicación sobre HTTP usando SSL y usar Meterpreter\n']
 
 # called from create_payload.py associated dictionary = ms_attacks
 create_payloads_menu = [
@@ -297,8 +295,8 @@ create_payloads_menu = [
     'MSCOMCTL ActiveX Buffer Overflow (ms12-027)\n']
 
 create_payloads_text = """
- Select the file format exploit you want.
- The default is the PDF embedded EXE.\n
+ Seleccione el exploit de formato de archivo que desea.
+ El predeterminado es el PDF con EXE embebido.\n
            ********** PAYLOADS **********\n"""
 
 browser_exploits_menu = [
@@ -350,42 +348,42 @@ browser_exploits_menu = [
     'Metasploit Browser Autopwn (USE AT OWN RISK!)\n']
 
 browser_exploits_text = """
- Enter the browser exploit you would like to use [8]:
+ Ingrese el exploit de navegador que le gustaría usar [8]:
 """
 
 # this is for the powershell attack vectors
-powershell_menu = ['Powershell Alphanumeric Shellcode Injector',
-                   'Powershell Reverse Shell',
-                   'Powershell Bind Shell',
-                   'Powershell Dump SAM Database',
+powershell_menu = ['Inyector de Shellcode Alfanumérico Powershell',
+                   'Shell Inverso Powershell',
+                   'Shell Bind Powershell',
+                   'Volcado de Base de Datos SAM Powershell',
                    '0D']
 
 powershell_text = ("""
-The """ + bcolors.BOLD + """Powershell Attack Vector""" + bcolors.ENDC + """ module allows you to create PowerShell specific attacks. These attacks will allow you to use PowerShell which is available by default in all operating systems Windows Vista and above. PowerShell provides a fruitful landscape for deploying payloads and performing functions that  do not get triggered by preventative technologies.\n""")
+El módulo de """ + bcolors.BOLD + """Vector de Ataque Powershell""" + bcolors.ENDC + """ le permite crear ataques específicos de PowerShell. Estos ataques le permitirán usar PowerShell que está disponible por defecto en todos los sistemas operativos Windows Vista y superiores. PowerShell proporciona un paisaje fructífero para desplegar payloads y realizar funciones que no son detectadas por tecnologías preventivas.\n""")
 
 
 encoder_menu = ['shikata_ga_nai',
-                'No Encoding',
-                'Multi-Encoder',
-                'Backdoored Executable\n']
+                'Sin Codificación',
+                'Multi-Codificador',
+                'Ejecutable con Puerta Trasera\n']
 
 encoder_text = """
-Select one of the below, 'backdoored executable' is typically the best. However,
-most still get picked up by AV. You may need to do additional packing/crypting
-in order to get around basic AV detection.
+Seleccione una de las siguientes, 'ejecutable con puerta trasera' es típicamente la mejor. Sin embargo,
+la mayoría aún son detectados por AV. Puede necesitar hacer empaquetado/cifrado adicional
+para evadir la detección básica de AV.
 """
 
 dll_hijacker_text = """
- The DLL Hijacker vulnerability will allow normal file extensions to
- call local (or remote) .dll files that can then call your payload or
- executable. In this scenario it will compact the attack in a zip file
- and when the user opens the file extension, will trigger the dll then
- ultimately our payload. During the time of this release, all of these
- file extensions were tested and appear to work and are not patched. This
- will continuously be updated as time goes on.
+ La vulnerabilidad DLL Hijacker permitirá que extensiones de archivo normales
+ llamen a archivos .dll locales (o remotos) que luego pueden llamar a su payload o
+ ejecutable. En este escenario compactará el ataque en un archivo zip
+ y cuando el usuario abra la extensión del archivo, activará la dll y luego
+ finalmente nuestro payload. Durante el momento de este lanzamiento, todas estas
+ extensiones de archivo fueron probadas y parecen funcionar y no están parcheadas. Esto
+ se actualizará continuamente con el tiempo.
 """
 
 fakeap_dhcp_menu = ['10.0.0.100-254',
                     '192.168.10.100-254\n']
 
-fakeap_dhcp_text = "Please choose the DHCP configuration you would like to use: "
+fakeap_dhcp_text = "Por favor elija la configuración DHCP que le gustaría usar: "

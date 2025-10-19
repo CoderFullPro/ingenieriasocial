@@ -323,7 +323,7 @@ def validate_ip(address):
                 debug_msg("setcore", "this is a valid IP address", 5)
                 return True
             else:
-                print_error("This is not a valid IP address...")
+                print_error("Esta no es una dirección IP válida...")
                 raise socket.error
 
         else:
@@ -405,13 +405,13 @@ def meta_path():
         # if we didn't find anything
         if trigger == 0:
             print_error(
-                "Metasploit path not found. These payloads will be disabled.")
+                "Ruta de Metasploit no encontrada. Estos payloads serán deshabilitados.")
             print_error(
-                "Please configure Metasploit's path in the /etc/setoolkit/set.config file.")
+                "Por favor configure la ruta de Metasploit en el archivo /etc/setoolkit/set.config.")
             msf_path = False
 
     except Exception as e:
-        print_status("Something went wrong. Printing error: " + str(e))
+        print_status("Algo salió mal. Imprimiendo error: " + str(e))
 
     # this is an option if we don't want to use Metasploit period
     check_metasploit = check_config("METASPLOIT_MODE=").lower()
@@ -495,7 +495,7 @@ def cleanup_routine():
         pass
 
 #
-# Update The Social-Engineer Toolkit
+# Actualizar ingenieriasocial
 #
 
 
@@ -517,7 +517,7 @@ def update_set():
     # if we aren't running Kali or BackBox :(
     else:
         print_info("Kali or BackBox Linux not detected, manually updating..")
-        print_info("Updating the Social-Engineer Toolkit, be patient...")
+        print_info("Actualizando ingenieriasocial, sea paciente...")
         print_info("Performing cleanup first...")
         subprocess.Popen("git clean -fd", shell=True).wait()
         print_info("Updating... This could take a little bit...")
@@ -857,22 +857,20 @@ def show_banner(define_version, graphic):
         os.system("clear")
 
     print(bcolors.BLUE + """
-[---]        The Social-Engineer Toolkit (""" + bcolors.YELLOW + """SET""" + bcolors.BLUE + """)         [---]
-[---]        Created by:""" + bcolors.RED + """ David Kennedy """ + bcolors.BLUE + """(""" + bcolors.YELLOW + """ReL1K""" + bcolors.BLUE + """)         [---]
-                      Version: """ + bcolors.RED + """%s""" % (define_version) + bcolors.BLUE + """
-                    Codename: '""" + bcolors.YELLOW + """Maverick""" + bcolors.ENDC + bcolors.BLUE + """'
-[---]        Follow us on Twitter: """ + bcolors.PURPLE + """@TrustedSec""" + bcolors.BLUE + """         [---]
-[---]        Follow me on Twitter: """ + bcolors.PURPLE + """@HackingDave""" + bcolors.BLUE + """        [---]
-[---]       Homepage: """ + bcolors.YELLOW + """https://www.trustedsec.com""" + bcolors.BLUE + """       [---]
-""" + bcolors.GREEN + """        Welcome to the Social-Engineer Toolkit (SET).
-         The one stop shop for all of your SE needs.
+[---]              """ + bcolors.YELLOW + """ingenieriasocial""" + bcolors.BLUE + """                    [---]
+[---]        Creado por:""" + bcolors.RED + """ MidasOrion """ + bcolors.BLUE + """                  [---]
+                      Versión: """ + bcolors.RED + """%s""" % (define_version) + bcolors.BLUE + """
+                    Nombre código: '""" + bcolors.YELLOW + """Maverick""" + bcolors.ENDC + bcolors.BLUE + """'
+[---]        Herramienta de Ingeniería Social           [---]
+[---]        Uso Ético y Educativo Solamente            [---]
+""" + bcolors.GREEN + """        Bienvenido a ingenieriasocial.
+         Tu herramienta completa para Ingeniería Social.
 """)
-    print(bcolors.BOLD + """   The Social-Engineer Toolkit is a product of TrustedSec.\n\n           Visit: """ +
-          bcolors.GREEN + """https://www.trustedsec.com\n""" + bcolors.ENDC)
-    print(bcolors.BLUE + """   It's easy to update using the PenTesters Framework! (PTF)\nVisit """ + bcolors.YELLOW +
-          """https://github.com/trustedsec/ptf""" + bcolors.BLUE + """ to update all your tools!\n\n""" + bcolors.ENDC)
+    print(bcolors.BOLD + """   ingenieriasocial - Herramienta de Pruebas de Penetración\n\n           Creado por: """ +
+          bcolors.GREEN + """MidasOrion\n""" + bcolors.ENDC)
+    print(bcolors.BLUE + """   Recuerda: Usa esta herramienta de forma ética y responsable.\n   Solo para propósitos educativos y de pruebas autorizadas.\n\n""" + bcolors.ENDC)
 
-    # here we check if  there is a new version of SET - if there is, then
+    # aquí verificamos si hay una nueva versión de ingenieriasocial - si la hay, entonces
     # display a banner
     cv = get_version()
 
@@ -989,13 +987,13 @@ def show_graphic():
         print(bcolors.RED + r'''
           !\_________________________/!\
           !!                         !! \
-          !! Social-Engineer Toolkit !!  \
+          !!   ingenieriasocial      !!  \
           !!                         !!  !
-          !!          Free           !!  !
+          !!      Herramienta        !!  !
+          !!      de Ingeniería      !!  !
+          !!        Social           !!  !
           !!                         !!  !
-          !!          #hugs          !!  !
-          !!                         !!  !
-          !!      By: TrustedSec     !!  /
+          !!    Por: MidasOrion      !!  /
           !!_________________________!! /
           !/_________________________\!/
              __\_________________/__/!_
@@ -1252,7 +1250,7 @@ def custom_template():
         print("\n")
         filewrite.close()
     except Exception as e:
-        print_error("ERROR:An error occured:")
+        print_error("ERROR: Ocurrió un error:")
         print(bcolors.RED + "ERROR:" + str(e) + bcolors.ENDC)
 
 
@@ -1519,7 +1517,7 @@ def generate_powershell_alphanumeric_payload(payload, ipaddr, port, payload2):
         shellcode = newdata[:-1]
 
     except Exception as e:
-        print_error("Something went wrong, printing error: " + str(e))
+        print_error("Algo salió mal, imprimiendo error: " + str(e))
 
     # added random vars before and after to change strings - AV you are
     # seriously ridiculous.
@@ -1630,8 +1628,8 @@ def shellcode_replace(ipaddr, port, shellcode):
 
 def exit_set():
     cleanup_routine()
-    print("\n\n Thank you for " + bcolors.RED + "shopping" + bcolors.ENDC +
-          " with the Social-Engineer Toolkit.\n\n Hack the Gibson...and remember...hugs are worth more than handshakes.\n")
+    print("\n\n Gracias por usar " + bcolors.RED + "ingenieriasocial" + bcolors.ENDC +
+          " creado por MidasOrion.\n\n Recuerda usar esta herramienta de forma ética y responsable.\n")
     sys.exit()
 
 
@@ -1947,7 +1945,7 @@ Select which option you want:
     # if we need to use the built in applet
     if choice1 == "2":
         print_status(
-            "Okay! Using the one built into SET - be careful, self signed isn't accepted in newer versions of Java :(")
+            "¡De acuerdo! Usando el integrado en ingenieriasocial - ten cuidado, los certificados autofirmados no son aceptados en versiones nuevas de Java :(")
 
     # if we want to build our own
     if choice1 == "3":
@@ -2003,7 +2001,7 @@ def tail(filename):
                 print(line,)  # already has newline
 
     else:
-        print_error("File not found, cannot tail.")
+        print_error("Archivo no encontrado, no se puede hacer tail.")
 
 # this will create an obfsucated powershell encoded command string to be
 # used through SET

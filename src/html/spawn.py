@@ -510,7 +510,7 @@ except Exception as e:
             print_error("ERROR: Unable to start Apache through SET,")
             print_error(
                 "ERROR: Please turn Apache off in the set_config or turn it on manually!")
-            print_error("Exiting the Social-Engineer Toolkit...")
+            print_error("Saliendo de ingenieriasocial...")
             exit_set()
 
 # except KeyboardInterrupt

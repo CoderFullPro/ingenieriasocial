@@ -18,7 +18,7 @@ except NameError:
 
 ###########################################################
 #                                                         #
-# SET - Use codesigning for the java applet attack vector #
+# ingenieriasocial - Usar firma de código para el vector de ataque java applet #
 #                                                         #
 ###########################################################
 

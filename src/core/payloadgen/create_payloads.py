@@ -259,14 +259,14 @@ try:
         # here we check if the user really wants to use port 80
         if choice3 == "80":
             print_warning(
-                "WARNING: SET Web Server requires port 80 to listen.")
+                "ADVERTENCIA: El Servidor Web SET requiere el puerto 80 para escuchar.")
             print_warning(
-                "WARNING: Are you sure you want to proceed with port 80?")
+                "ADVERTENCIA: ¿Está seguro de que desea continuar con el puerto 80?")
             port_choice_option = raw_input(
-                "\nDo you want to keep port 80? [y/n]")
+                "\n¿Desea mantener el puerto 80? [y/n]")
             if port_choice_option == "n":
                 # reprompt it
-                choice3 = raw_input(setprompt(["4"], "PORT of listener [443]"))
+                choice3 = raw_input(setprompt(["4"], "PUERTO del listener [443]"))
 
         if choice3 == '':
             choice3 = '443'
