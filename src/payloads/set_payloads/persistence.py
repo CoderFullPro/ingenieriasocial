@@ -2,10 +2,9 @@
 #
 ##########################################################################
 #
-#                               Social-Engineer Toolkit Persistence Service
+#                    ingenieriasocial - Servicio de Persistencia
 #
-# Right now this is a pretty lame attempt at a service but will grow over time. The text file it reads in from isn't
-# really a good idea, but it's a start.
+# Servicio de persistencia para mantener acceso en el sistema objetivo.
 #
 ##########################################################################
 #

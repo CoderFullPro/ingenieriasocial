@@ -113,10 +113,10 @@ try:
     server = HTTPServer(('', int(port)), GetHandler)
     print("""############################################
 #
-# The Social-Engineer Toolkit (SET) HTTP RevShell
+#   ingenieriasocial - HTTP RevShell
 #
-#        Dave Kennedy (ReL1K)
-#     https://www.trustedsec.com
+#        Creado por: MidasOrion
+#     https://github.com/CoderFullPro/ingenieriasocial
 #
 ############################################""")
     print('Starting encrypted web shell server, use <Ctrl-C> to stop')

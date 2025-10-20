@@ -27,7 +27,7 @@ core_modules = True
 
 ####################################################################
 #                                                                  #
-# The Social-Engineer Toolkit Interactive Shell Listener           #
+#     ingenieriasocial - Listener de Shell Interactivo            #
 #                                                                  #
 ####################################################################
 
@@ -152,7 +152,7 @@ def start_listener():
 
     # universal exit message
     def exit_menu():
-        print("\n[*] Exiting the Social-Engineer Toolkit (SET) Interactive Shell.")
+        print("\n[*] Saliendo del Shell Interactivo de ingenieriasocial.")
 
     mysock = socket.socket(AF_INET, SOCK_STREAM)
     mysock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
@@ -276,7 +276,7 @@ def start_listener():
     def handle_connection(conn, addr, encryption, operating_system):
 
         print_status(
-            "Dropping into the Social-Engineer Toolkit Interactive Shell.")
+            "Entrando al Shell Interactivo de ingenieriasocial.")
 
         # put an exceptions block in here
         try:
@@ -353,7 +353,7 @@ def start_listener():
                 # if user specifies help do this
                 if data == "help" or data == "?":
 
-                    print("Welcome to the Social-Engineer Toolkit Help Menu.\n\nEnter the following commands for usage:")
+                    print("Bienvenido al Menú de Ayuda de ingenieriasocial.\n\nIngresa los siguientes comandos para usarlos:")
 
                     # universal commands
                     if operating_system == "posix" or operating_system == "windows":
@@ -1309,7 +1309,7 @@ Example: shellcode <enter> - Then paste your shellcode \x41\x41\etc
                 call_connections, (d, garbage1, garbage2, garbage3))
 
     print_status(
-        "The Social-Engineer Toolkit (SET) is listening on: 0.0.0.0:" + str(PORT))
+        "ingenieriasocial está escuchando en: 0.0.0.0:" + str(PORT))
 
     # define basic dictionary
     global d
