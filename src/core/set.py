@@ -303,19 +303,19 @@ try:
                                                 # this part is to determine if NAT/port forwarding is used
                                                 # if it is it'll prompt for
                                                 # additional questions
-                                                print_info("NAT/Port Forwarding can be used in the cases where your SET machine is")
-                                                print_info("not externally exposed and may be a different IP address than your reverse listener.")
-                                                nat_or_fwd = yesno_prompt('0', 'Are you using NAT/Port Forwarding [yes|no]')
+                                                print_info("NAT/Reenvío de Puertos puede usarse en casos donde tu máquina SET no está")
+                                                print_info("expuesta externamente y puede tener una IP diferente a tu listener de reverse.")
+                                                nat_or_fwd = yesno_prompt('0', '¿Estás usando NAT/Reenvío de Puertos? [si|no]')
                                                 if nat_or_fwd == "YES":
-                                                    ipquestion = raw_input(setprompt(["2"], "IP address to SET web server (this could be your external IP or hostname)"))
+                                                    ipquestion = raw_input(setprompt(["2"], "Dirección IP del servidor web SET (puede ser tu IP externa o hostname)"))
                                                     filewrite2 = open(userconfigpath + "interface", "w")
                                                     filewrite2.write(ipquestion)
                                                     filewrite2.close()
                                                     # is your payload/listener
                                                     # on a different IP?
-                                                    natquestion = yesno_prompt(["2"], "Is your payload handler (metasploit) on a different IP from your external NAT/Port FWD address [yes|no]")
+                                                    natquestion = yesno_prompt(["2"], "¿Tu manejador de payload (metasploit) está en una IP diferente a tu dirección NAT/Reenvío de Puertos? [si|no]")
                                                     if natquestion == 'YES':
-                                                        ipaddr = raw_input(setprompt(["2"], "IP address for the reverse handler (reverse payload)"))
+                                                        ipaddr = raw_input(setprompt(["2"], "Dirección IP para el manejador reverse (reverse payload)"))
                                                     if natquestion == "NO":
                                                         ipaddr = ipquestion
                                                 # if you arent using NAT/Port
@@ -326,30 +326,29 @@ try:
                                 if attack_vector == "harvester" or attack_vector == "tabnabbing" or attack_vector == "webjacking":
                                     print("""
 -------------------------------------------------------------------------------
---- * IMPORTANT * READ THIS BEFORE ENTERING IN THE IP ADDRESS * IMPORTANT * ---
+--- * IMPORTANTE * LEE ESTO ANTES DE INGRESAR LA DIRECCIÓN IP * IMPORTANTE * ---
 
-The way that this works is by cloning a site and looking for form fields to
-rewrite. If the POST fields are not usual methods for posting forms this 
-could fail. If it does, you can always save the HTML, rewrite the forms to
-be standard forms and use the "IMPORT" feature. Additionally, really 
-important:
+La forma en que esto funciona es clonando un sitio y buscando campos de formulario
+para reescribir. Si los campos POST no son métodos usuales para enviar formularios,
+esto podría fallar. Si falla, siempre puedes guardar el HTML, reescribir los
+formularios para que sean estándar y usar la función "IMPORTAR". Además, muy
+importante:
 
-If you are using an EXTERNAL IP ADDRESS, you need to place the EXTERNAL
-IP address below, not your NAT address. Additionally, if you don't know
-basic networking concepts, and you have a private IP address, you will
-need to do port forwarding to your NAT IP address from your external IP
-address. A browser doesn’t know how to communicate with a private IP
-address, so if you don't specify an external IP address if you are using
-this from an external perspective, it will not work. This isn't a SET issue
-this is how networking works.
+Si estás usando una DIRECCIÓN IP EXTERNA, necesitas colocar la dirección IP
+EXTERNA abajo, no tu dirección NAT. Además, si no conoces conceptos básicos de
+redes y tienes una dirección IP privada, necesitarás hacer reenvío de puertos
+desde tu dirección IP externa a tu dirección IP NAT. Un navegador no sabe cómo
+comunicarse con una dirección IP privada, así que si no especificas una dirección
+IP externa cuando uses esto desde una perspectiva externa, no funcionará. Esto no
+es un problema de SET, así es como funcionan las redes.
 """)
 
                                     try:
                                         revipaddr = detect_public_ip()
-                                        ipaddr = raw_input(setprompt(["2"], "IP address for the POST back in Harvester/Tabnabbing [" + revipaddr + "]"))
+                                        ipaddr = raw_input(setprompt(["2"], "Dirección IP para el POST back en Harvester/Tabnabbing [" + revipaddr + "]"))
                                         if ipaddr == "": ipaddr=revipaddr
                                     except Exception:
-                                        rhost = raw_input("Enter the IP address for POST back in Harvester/Tabnabbing: ")
+                                        rhost = raw_input("Ingresa la dirección IP para POST back en Harvester/Tabnabbing: ")
                                         ipaddr = rhost
 
                                 if check_options("IPADDR=") != 0:
