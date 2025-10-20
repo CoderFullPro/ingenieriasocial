@@ -852,7 +852,12 @@ def show_banner(define_version, graphic):
             os.system("clear")
         if check_os() == "windows":
             os.system("cls")
-        show_graphic()
+        # Usar los nuevos banners personalizados
+        try:
+            from src.core.banners import show_custom_banner
+            show_custom_banner()
+        except:
+            show_graphic()
     else:
         os.system("clear")
 
