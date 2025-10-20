@@ -333,9 +333,37 @@ cp src/templates/phishing/instagram/* src/templates/phishing/nueva_plataforma/
 
 ## 🔄 Actualizar ingenieriasocial
 
+### **Método 1: Script Automático (Recomendado)**
+
 ```bash
 cd /opt/ingieriasocial
-sudo git pull origin master
+./upgrade.sh
+```
+
+El script automáticamente:
+- ✅ Hace backup de tus capturas
+- ✅ Descarga la última versión
+- ✅ Muestra los cambios
+- ✅ Actualiza dependencias
+- ✅ Restaura tus capturas
+- ✅ Configura permisos
+
+### **Método 2: Manual**
+
+```bash
+cd /opt/ingieriasocial
+
+# Guardar capturas
+cp -r src/templates/phishing/*/captured_credentials.* ~/backup/
+
+# Actualizar
+git pull origin master
+
+# Restaurar capturas
+cp ~/backup/captured_credentials.* src/templates/phishing/*/
+
+# Actualizar permisos
+chmod +x ingenieriasocial
 ```
 
 ---
