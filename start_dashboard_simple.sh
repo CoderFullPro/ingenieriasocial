@@ -1,48 +1,27 @@
 #!/bin/bash
 
 echo "╔════════════════════════════════════════════════════════════════╗"
-echo "║          🎯 Dashboard Web - ingenieriasocial                   ║"
+echo "║          🎯 Dashboard Simple - ingenieriasocial                ║"
 echo "║                   Creado por: MidasOrion                       ║"
 echo "╚════════════════════════════════════════════════════════════════╝"
 echo ""
 
-# Verificar si Python3 está instalado
-if ! command -v python3 &> /dev/null; then
-    echo "❌ Python3 no está instalado"
-    exit 1
-fi
+# Ir al directorio del proyecto
+cd "$(dirname "$0")"
 
-echo "✅ Python3 encontrado"
-
-# Verificar/instalar dependencias
-echo ""
-echo "📦 Verificando dependencias..."
-
-if ! python3 -c "import flask" 2>/dev/null; then
-    echo "⚙️  Instalando Flask..."
-    pip3 install flask flask-cors --quiet
-fi
-
-if ! python3 -c "import flask_cors" 2>/dev/null; then
-    echo "⚙️  Instalando Flask-CORS..."
-    pip3 install flask-cors --quiet
-fi
-
-echo "✅ Dependencias instaladas"
-echo ""
-
-# Ir al directorio del dashboard
-cd "$(dirname "$0")/src/dashboard"
-
-# Iniciar el servidor
-echo "🚀 Iniciando Dashboard..."
+# Iniciar servidor HTTP simple
+echo "🚀 Iniciando servidor HTTP..."
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  📊 Dashboard: http://localhost:8080"
-echo "  🔌 API: http://localhost:8080/api/stats"
+echo "  📊 Dashboard: http://localhost:8000/dashboard_simple.html"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
+echo "  💡 El dashboard se actualizará automáticamente cada 5 segundos"
 echo "  💡 Presiona Ctrl+C para detener el servidor"
 echo ""
 
-python3 dashboard.py
+# Abrir navegador automáticamente
+sleep 2 && open http://localhost:8000/dashboard_simple.html &
+
+# Iniciar servidor Python
+python3 -m http.server 8000

@@ -287,10 +287,10 @@ if __name__ == '__main__':
 ╚════════════════════════════════════════════════════════════════╝
 
 [+] Iniciando servidor...
-[+] Dashboard disponible en: http://localhost:5000
-[+] API disponible en: http://localhost:5000/api/stats
+[+] Dashboard disponible en: http://localhost:8080
+[+] API disponible en: http://localhost:8080/api/stats
 
 [!] Presiona Ctrl+C para detener el servidor
     """)
     
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
