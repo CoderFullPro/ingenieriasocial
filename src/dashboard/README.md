@@ -314,7 +314,7 @@ Este dashboard es parte de **ingenieriasocial** por MidasOrion.
 
 ## 📞 Soporte
 
-- GitHub: https://github.com/CoderFullPro/ingieriasocial
+- GitHub: https://github.com/CoderFullPro/ingenieriasocial
 - Creador: MidasOrion
 
 ---

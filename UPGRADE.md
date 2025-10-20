@@ -7,7 +7,7 @@
 ## 🚀 Actualización Rápida
 
 ```bash
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 ./upgrade.sh
 ```
 
@@ -52,7 +52,7 @@ cd /opt/ingieriasocial
 ## 📊 Ejemplo de Uso
 
 ```bash
-$ cd /opt/ingieriasocial
+$ cd /opt/ingenieriasocial
 $ ./upgrade.sh
 
 ╔════════════════════════════════════════════════════════════════╗
@@ -127,7 +127,7 @@ Si prefieres actualizar manualmente:
 
 ```bash
 # 1. Ir al directorio
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 
 # 2. Backup de capturas
 mkdir -p ~/backup_ingenieriasocial
@@ -182,7 +182,7 @@ sudo systemctl restart apache2
 ## 🔍 Verificar Versión Actual
 
 ```bash
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 git log -1 --oneline
 ```
 
@@ -247,7 +247,7 @@ git reset --hard origin/master
 ### **Error: "fatal: not a git repository"**
 No estás en el directorio correcto o no es un repositorio git:
 ```bash
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 git status
 ```
 
@@ -310,8 +310,8 @@ git pull origin master
 
 - **Instalación:** `INSTALL_KALI.md`
 - **README:** `README.md`
-- **GitHub:** https://github.com/CoderFullPro/ingieriasocial
-- **Issues:** https://github.com/CoderFullPro/ingieriasocial/issues
+- **GitHub:** https://github.com/CoderFullPro/ingenieriasocial
+- **Issues:** https://github.com/CoderFullPro/ingenieriasocial/issues
 
 ---
 

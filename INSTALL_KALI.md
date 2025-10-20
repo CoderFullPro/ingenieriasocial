@@ -21,10 +21,10 @@ Guía completa para instalar y usar **ingenieriasocial** en Kali Linux.
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/CoderFullPro/ingieriasocial.git
+git clone https://github.com/CoderFullPro/ingenieriasocial.git
 
 # Entrar al directorio
-cd ingieriasocial
+cd ingenieriasocial
 
 # Dar permisos de ejecución
 chmod +x ingenieriasocial
@@ -60,8 +60,8 @@ sudo apt install -y apache2 php
 
 ```bash
 cd /opt
-sudo git clone https://github.com/CoderFullPro/ingieriasocial.git
-cd ingieriasocial
+sudo git clone https://github.com/CoderFullPro/ingenieriasocial.git
+cd ingenieriasocial
 ```
 
 ### **4. Dar permisos**
@@ -85,14 +85,14 @@ sudo ./ingenieriasocial
 ### **Iniciar ingenieriasocial:**
 
 ```bash
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 sudo ./ingenieriasocial
 ```
 
 ### **Iniciar Dashboard:**
 
 ```bash
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 ./start_dashboard_simple.sh
 ```
 
@@ -336,7 +336,7 @@ cp src/templates/phishing/instagram/* src/templates/phishing/nueva_plataforma/
 ### **Método 1: Script Automático (Recomendado)**
 
 ```bash
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 ./upgrade.sh
 ```
 
@@ -351,7 +351,7 @@ El script automáticamente:
 ### **Método 2: Manual**
 
 ```bash
-cd /opt/ingieriasocial
+cd /opt/ingenieriasocial
 
 # Guardar capturas
 cp -r src/templates/phishing/*/captured_credentials.* ~/backup/
@@ -398,10 +398,10 @@ chmod +x ingenieriasocial
 
 ```bash
 # Cambiar permisos
-sudo chmod 700 /opt/ingieriasocial
+sudo chmod 700 /opt/ingenieriasocial
 
 # Solo root puede ejecutar
-sudo chown root:root /opt/ingieriasocial -R
+sudo chown root:root /opt/ingenieriasocial -R
 
 # Firewall
 sudo ufw enable
@@ -453,13 +453,13 @@ tar -xzf capturas_backup_20250120.tar.gz
 ## 🎓 Recursos Adicionales
 
 ### **Documentación:**
-- README principal: `/opt/ingieriasocial/README.md`
-- Templates: `/opt/ingieriasocial/src/templates/phishing/README.md`
-- Dashboard: `/opt/ingieriasocial/src/dashboard/README.md`
+- README principal: `/opt/ingenieriasocial/README.md`
+- Templates: `/opt/ingenieriasocial/src/templates/phishing/README.md`
+- Dashboard: `/opt/ingenieriasocial/src/dashboard/README.md`
 
 ### **Soporte:**
-- GitHub: https://github.com/CoderFullPro/ingieriasocial
-- Issues: https://github.com/CoderFullPro/ingieriasocial/issues
+- GitHub: https://github.com/CoderFullPro/ingenieriasocial
+- Issues: https://github.com/CoderFullPro/ingenieriasocial/issues
 
 ---
 
@@ -468,8 +468,8 @@ tar -xzf capturas_backup_20250120.tar.gz
 ```bash
 # 1. Instalar
 cd /opt
-sudo git clone https://github.com/CoderFullPro/ingieriasocial.git
-cd ingieriasocial
+sudo git clone https://github.com/CoderFullPro/ingenieriasocial.git
+cd ingenieriasocial
 sudo chmod +x ingenieriasocial
 
 # 2. Copiar templates a Apache

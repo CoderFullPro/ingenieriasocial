@@ -187,7 +187,7 @@ Para agregar nuevos templates:
 ## 📞 Soporte
 
 Para reportar bugs o sugerir mejoras:
-- GitHub: https://github.com/CoderFullPro/ingieriasocial
+- GitHub: https://github.com/CoderFullPro/ingenieriasocial
 - Creador: MidasOrion
 
 ---

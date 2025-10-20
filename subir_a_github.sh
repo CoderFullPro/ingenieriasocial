@@ -68,7 +68,7 @@ elif [ "$metodo" = "2" ]; then
     
     echo ""
     echo "Configurando remote con token..."
-    git remote set-url origin https://$token@github.com/CoderFullPro/ingieriasocial.git
+    git remote set-url origin https://$token@github.com/CoderFullPro/ingenieriasocial.git
     
     echo ""
     echo "Subiendo código a GitHub..."
@@ -77,7 +77,7 @@ elif [ "$metodo" = "2" ]; then
     # Limpiar el token del remote por seguridad
     echo ""
     echo "Limpiando configuración de token..."
-    git remote set-url origin https://github.com/CoderFullPro/ingieriasocial.git
+    git remote set-url origin https://github.com/CoderFullPro/ingenieriasocial.git
     
 else
     echo "Opción no válida."
@@ -90,5 +90,5 @@ echo "✓ ¡Código subido exitosamente!"
 echo "=========================================="
 echo ""
 echo "Tu repositorio está en:"
-echo "https://github.com/CoderFullPro/ingieriasocial"
+echo "https://github.com/CoderFullPro/ingenieriasocial"
 echo ""
