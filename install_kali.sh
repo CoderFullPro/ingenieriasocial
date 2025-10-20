@@ -58,7 +58,7 @@ echo "📂 Paso 3: Configurando permisos..."
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # Dar permisos de ejecución
-chmod +x setoolkit
+chmod +x ingenieriasocial
 chmod +x start_dashboard_simple.sh
 chmod +x start_dashboard.sh
 chmod +x subir_a_github.sh
@@ -138,7 +138,7 @@ echo "  Luego accede a: http://$IP_LOCAL:8000/dashboard_simple.html"
 echo ""
 echo "🚀 Iniciar ingenieriasocial:"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  sudo ./setoolkit"
+echo "  sudo ./ingenieriasocial"
 echo ""
 echo "📚 Documentación:"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

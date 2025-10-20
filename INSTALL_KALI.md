@@ -27,10 +27,10 @@ git clone https://github.com/CoderFullPro/ingieriasocial.git
 cd ingieriasocial
 
 # Dar permisos de ejecución
-chmod +x setoolkit
+chmod +x ingenieriasocial
 
 # Ejecutar como root
-sudo ./setoolkit
+sudo ./ingenieriasocial
 ```
 
 ---
@@ -67,7 +67,7 @@ cd ingieriasocial
 ### **4. Dar permisos**
 
 ```bash
-sudo chmod +x setoolkit
+sudo chmod +x ingenieriasocial
 sudo chmod +x start_dashboard_simple.sh
 sudo chmod +x subir_a_github.sh
 ```
@@ -75,7 +75,7 @@ sudo chmod +x subir_a_github.sh
 ### **5. Ejecutar**
 
 ```bash
-sudo ./setoolkit
+sudo ./ingenieriasocial
 ```
 
 ---
@@ -86,7 +86,7 @@ sudo ./setoolkit
 
 ```bash
 cd /opt/ingieriasocial
-sudo ./setoolkit
+sudo ./ingenieriasocial
 ```
 
 ### **Iniciar Dashboard:**
@@ -257,8 +257,8 @@ sudo certbot renew --dry-run
 ### **Error: Permission denied**
 
 ```bash
-sudo chmod +x setoolkit
-sudo ./setoolkit
+sudo chmod +x ingenieriasocial
+sudo ./ingenieriasocial
 ```
 
 ### **Error: Module not found**
@@ -442,7 +442,7 @@ tar -xzf capturas_backup_20250120.tar.gz
 cd /opt
 sudo git clone https://github.com/CoderFullPro/ingieriasocial.git
 cd ingieriasocial
-sudo chmod +x setoolkit
+sudo chmod +x ingenieriasocial
 
 # 2. Copiar templates a Apache
 sudo cp -r src/templates/phishing/* /var/www/html/
